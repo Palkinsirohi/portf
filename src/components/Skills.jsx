@@ -21,7 +21,7 @@ const Skills = () => {
           </svg>
           <span>Skills</span>
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-300">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 text-gray-300">
           {Object.entries(skillsData).map(([category, skills], index) => (
             <div key={index} className="bg-gray-800 rounded-lg p-6 cursor-pointer shadow-lg hover:shadow-indigo-500 transition transform hover:-translate-y-2 hover:scale-105">
               <h4 className="text-xl font-semibold mb-4 text-indigo-400 flex items-center space-x-2">

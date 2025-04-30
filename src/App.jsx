@@ -1,10 +1,11 @@
-import React from 'react';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Education from './components/Education';
-import Achievements from './components/Achievements';
-import Contact from './components/Contact';
+import React, { Suspense, lazy } from 'react';
+
+const Hero = lazy(() => import('./components/Hero'));
+const About = lazy(() => import('./components/About'));
+const Skills = lazy(() => import('./components/Skills'));
+const Education = lazy(() => import('./components/Education'));
+const Achievements = lazy(() => import('./components/Achievements'));
+const Contact = lazy(() => import('./components/Contact'));
 
 const projects = [
   {
@@ -50,11 +51,12 @@ function App() {
     <div className="min-h-screen bg-gray-900 text-white font-sans">
       {/* Header */}
       <header className="bg-gray-800 shadow-md sticky top-0 z-50 transition-colors duration-300">
-        <div className="flex justify-between items-center p-4 max-w-7xl mx-auto">
+        <div className="flex flex-wrap justify-between items-center p-4 max-w-7xl mx-auto">
           <h1 className="text-2xl font-bold cursor-pointer">Palkin Sirohi</h1>
           <nav>
-            <ul className="flex space-x-6">
+            <ul className="flex flex-wrap space-x-6">
               <li><a href="#about" className="hover:text-indigo-400 transition">About</a></li>
+              <li><a href="#skills" className="hover:text-indigo-400 transition">Skills</a></li>
               <li><a href="#education" className="hover:text-indigo-400 transition">Education</a></li>
               <li><a href="#achievements" className="hover:text-indigo-400 transition">Achievements</a></li>
               <li><a href="#projects" className="hover:text-indigo-400 transition">Projects</a></li>
@@ -65,22 +67,32 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <Hero />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Hero />
+      </Suspense>
 
       {/* About Section */}
-      <About />
+      <Suspense fallback={<div>Loading...</div>}>
+        <About />
+      </Suspense>
 
       {/* Skills Section */}
-      <Skills />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Skills />
+      </Suspense>
 
       {/* Education Section */}
-      <Education />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Education />
+      </Suspense>
 
       {/* Achievements Section */}
-      <Achievements />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Achievements />
+      </Suspense>
 
       {/* Projects Section */}
-      <section id="projects" className="px-8 py-12 max-w-5xl mx-auto">
+      <section id="projects" className="px-4 sm:px-8 py-12 max-w-5xl mx-auto">
         <h3 className="text-3xl font-bold mb-8 text-center">Projects</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -101,7 +113,9 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <Contact />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Contact />
+      </Suspense>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-500 text-center py-6 mt-12">
