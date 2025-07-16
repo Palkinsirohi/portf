@@ -1,54 +1,76 @@
 # React Vite Portfolio Project(https://portf-teal.vercel.app/)
+## Project Overview
+This is a personal portfolio website built using React and Vite. It showcases various sections including About, Skills, Education, Achievements, Projects, and Contact. The site is styled with Tailwind CSS and includes animations powered by Framer Motion. It features lazy loading of components for performance optimization.
 
-This is a React portfolio project built using Vite as the build tool. It showcases various components such as About, Achievements, Contact, Education, Hero, and Skills.
+## File Structure
+.
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── vite.config.js
+├── public
+│   └── vite.svg
+├── src
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   ├── main.jsx
+│   ├── assets
+│   │   ├── profile.jpg
+│   │   └── react.svg
+│   └── components
+│       ├── About.jsx
+│       ├── Achievements.jsx
+│       ├── Contact.jsx
+│       ├── Education.jsx
+│       ├── Hero.jsx
+│       └── Skills.jsx
+```
 
-## Project Setup
+## Concepts and Technologies Used
 
-### Install Dependencies
+- **React**: Functional components with hooks (`useState`), lazy loading (`React.lazy` and `Suspense`), and component-based architecture.
+- **Vite**: Modern build tool for fast development and optimized production builds.
+- **Tailwind CSS**: Utility-first CSS framework for styling and responsive design.
+- **Framer Motion**: Animation library used for smooth animations and transitions.
+- **React Icons**: Icon library for React components.
+- **react-simple-typewriter**: Used for typing effect animations.
+- **ESLint**: Linting tool with React hooks and refresh plugins for code quality.
+- **Responsive Design**: Mobile-friendly navigation with a hamburger menu and adaptive layouts.
+- **Code Splitting**: Lazy loading of components to improve performance.
+
+## Main Files Description
+
+- `src/main.jsx`: Entry point of the React app, renders the `App` component inside React StrictMode.
+- `src/App.jsx`: Main app component that sets up the layout, navigation, and lazy loads different sections.
+- `src/components/`: Contains individual React components for different sections of the portfolio such as About, Skills, Education, Achievements, Hero, and Contact.
+- `src/assets/`: Contains static assets like profile pictures and icons.
+- `package.json`: Project metadata, dependencies, and scripts.
+- `vite.config.js`: Configuration for the Vite build tool.
+
+## Running the Project
+
+To run the project locally:
 
 ```bash
 npm install
-```
-
-### Run Development Server
-
-```bash
 npm run dev
 ```
 
-This will start the development server and you can view the project at `http://localhost:3000`.
+This will start the development server and open the portfolio website in your browser.
 
-### Build for Production
+## Deployment
 
-```bash
-npm run build
-```
-
-This will create an optimized production build in the `dist` folder.
-
-### Preview Production Build
+The project can be deployed using Vercel with the provided deploy script:
 
 ```bash
-npm run preview
+npm run deploy
 ```
 
-## Project Structure
+---
 
-- `src/` - Source files
-  - `assets/` - Images and static assets
-  - `components/` - React components (About, Achievements, Contact, Education, Hero, Skills)
-  - `App.jsx` - Main application component
-  - `main.jsx` - Entry point for React
-  - `index.css`, `App.css` - Stylesheets
-- `public/` - Public static files
-- `index.html` - Main HTML file
-- `package.json` - Project metadata and dependencies
-- `vite.config.js` - Vite configuration
+© 2024 Palkin Sirohi
 
-## Contributing
-
-Contributions are welcome. Please open an issue or submit a pull request.
-
-## License
-
-This project is open source and available under the MIT License.
